@@ -4,7 +4,6 @@ import (
 	"log"
 	"net/http"
 	"strings"
-
 	"github.com/yourname/product-service/internal/handler"
 	"github.com/yourname/product-service/internal/repository"
 	"github.com/yourname/product-service/internal/service"
@@ -37,7 +36,7 @@ func main() {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 	})
 
-	log.Println("🚀 Product service running on :8081")
+	log.Println("Product service running on :8081")
 	if err := http.ListenAndServe(":8081", mux); err != nil {
 		log.Fatal(err)
 	}

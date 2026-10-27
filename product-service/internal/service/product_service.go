@@ -2,7 +2,6 @@ package service
 
 import (
 	"errors"
-
 	"github.com/yourname/product-service/internal/models"
 )
 
@@ -37,7 +36,7 @@ func (s *ProductService) ListProducts() ([]*models.Product, error) {
 	return s.repo.FindAll()
 }
 
-// ReserveStock is what Order Service will call (via HTTP) before confirming an order.
+
 func (s *ProductService) ReserveStock(id string, quantity int) error {
 	p, err := s.repo.FindByID(id)
 	if err != nil {

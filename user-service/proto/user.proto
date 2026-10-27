@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/Kader1680/user-service/pb";
+
+service UserService {
+  rpc RegisterUser (RegisterUserRequest) returns (UserResponse);
+  rpc GetUser (GetUserRequest) returns (UserResponse);
+}
+
+message RegisterUserRequest {
+  string name = 1;
+  string email = 2;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  int64 created_at = 4;  // Unix timestamp
+}

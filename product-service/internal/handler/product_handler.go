@@ -36,7 +36,6 @@ type reserveStockRequest struct {
 	Quantity int `json:"quantity"`
 }
 
-// Called by other services (e.g. Order Service) to reserve stock - THIS is inter-service communication.
 func (h *ProductHandler) ReserveStock(w http.ResponseWriter, r *http.Request) {
 	id := strings.TrimPrefix(r.URL.Path, "/products/")
 	id = strings.TrimSuffix(id, "/reserve")

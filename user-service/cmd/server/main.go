@@ -32,7 +32,7 @@ func main() {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 	})
 
-	log.Println("🚀 User service running on :8082")
+	log.Println("User service running on :8082")
 	if err := http.ListenAndServe(":8082", mux); err != nil {
 		log.Fatal(err)
 	}
